@@ -182,9 +182,6 @@
 			
 		});
 
-		// load a file from your disc or USB drive:
-	
-		
 		Potree.loadPointCloud("./Converted_Point_Clouds/2021P70_Ground_converted/metadata.json", "Point Cloud", function(e){
 			viewer.scene.addPointCloud(e.pointcloud);
 			e.pointcloud.position.z = 0;
@@ -195,9 +192,12 @@
 			material.shape = Potree.PointShape.CIRCLE;
 			viewer.fitToScreen();
 		});
+
+		window.addEventListener('error', (e) => {
+			//console.log(e);
+			viewer.postError(e.error.message);
+		});
 		
 	</script>
-
-
 	</body>
 </html>
