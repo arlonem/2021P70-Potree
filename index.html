@@ -195,13 +195,6 @@
 			material.shape = Potree.PointShape.CIRCLE;
 			viewer.fitToScreen();
 		});
-
-		window.addEventListener('error', (e) => {
-			//console.log(e);
-			viewer.postError(e.error.message);
-		});
-
-		
 		
 	</script>
 
